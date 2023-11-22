@@ -1,8 +1,11 @@
 <div class="content">
-  <p>todo-list works!</p>
+  <h1>Todo-list</h1>
+  <p>Enter text the input field to add to your list.</p>
+  <p>Click the"x" to remove the item your list</p>
+  <p>Click the item to mark as complete</p>
   <div clas="content-app" >
     <input type="text" #todoInput (keydown.enter)="addTodo(todoInput.value, todoInput)">
-    <button (click)="addTodo(todoInput.value, todoInput)">Add ⊕</button>
+    <button (click)="addTodo(todoInput.value, todoInput)">Add </button>
   </div>
 
   <div class="task-list">
@@ -13,7 +16,7 @@
         class="todo-button">
         {{ todo.task }}
       </button>
-      <button (click)="deleteTodo(i)" class="delete-button">Delete</button>
+      <button (click)="deleteTodo(i)" class="delete-button">X</button>
     </div>
   </div>
 </div>
