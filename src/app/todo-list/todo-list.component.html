@@ -1,0 +1,19 @@
+<div class="content">
+  <p>todo-list works!</p>
+  <div clas="content-app" >
+    <input type="text" #todoInput (keydown.enter)="addTodo(todoInput.value, todoInput)">
+    <button (click)="addTodo(todoInput.value, todoInput)">Add ⊕</button>
+  </div>
+
+  <div class="task-list">
+    <div *ngFor="let todo of todos; let i = index" class="task-item">
+      <button 
+        (click)="toggleCompletion(todo)"
+        [class.completed]="todo.completed"
+        class="todo-button">
+        {{ todo.task }}
+      </button>
+      <button (click)="deleteTodo(i)" class="delete-button">Delete</button>
+    </div>
+  </div>
+</div>
